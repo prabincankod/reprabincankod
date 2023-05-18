@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import { ExtendedRecordMap } from "notion-types";
-const inter = Inter({ subsets: ["latin"] });
+import Image from "next/image";
 import { NotionAPI } from "notion-client";
-import "react-notion/src/styles.css";
+import { ExtendedRecordMap } from "notion-types";
 import "react-notion-x/src/styles.css";
+import "react-notion/src/styles.css";
+const inter = Inter({ subsets: ["latin"] });
 
 import "prismjs/themes/prism-tomorrow.css"; // only needed for code highlighting
 import { NotionRenderer } from "react-notion";
