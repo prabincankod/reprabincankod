@@ -1,26 +1,45 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-
+import { ExtendedRecordMap } from "notion-types";
 const inter = Inter({ subsets: ["latin"] });
 import { NotionAPI } from "notion-client";
 import "react-notion/src/styles.css";
+import "react-notion-x/src/styles.css";
+
 import "prismjs/themes/prism-tomorrow.css"; // only needed for code highlighting
 import { NotionRenderer } from "react-notion";
+import { NotionRenderer as Xrend } from "react-notion-x";
 
 const notion = new NotionAPI();
 
 export const getStaticProps = async () => {
-  const recordMap = await notion.getPage("de39f2b7a76740de9dc90fa36f7e98d6");
+  const recordMap: ExtendedRecordMap = await notion.getPage(
+    "de39f2b7a76740de9dc90fa36f7e98d6"
+  );
+
+  const iconmap: ExtendedRecordMap = await notion.getPage(
+    "39aae5743d344fab9bfaae223b57e4a3"
+  );
 
   return {
     props: {
+      iconmap,
       recordMap,
     },
+
+    // fallback: "blocking",
     revalidate: 10,
   };
 };
 // @ts-ignore
-export default function Home({ recordMap }) {
+export default function Home({
+  recordMap,
+  iconmap,
+}: {
+  recordMap: ExtendedRecordMap;
+  iconmap: ExtendedRecordMap;
+}) {
+  const map = iconmap.block;
   return (
     <>
       <header className="header p-[8px]">
@@ -30,11 +49,13 @@ export default function Home({ recordMap }) {
           </h2>
         </div>
       </header>
-      <NotionRenderer
-        blockMap={recordMap.block}
-        fullPage={true}
-        hideHeader={true}
-        level={0}
+      {/* @ts-ignore */}
+      <NotionRenderer blockMap={map} hideHeader={true} fullPage={true} />
+      <Xrend
+        recordMap={recordMap}
+        fullPage={false}
+        disableHeader={true}
+        darkMode={false}
       />
     </>
   );
