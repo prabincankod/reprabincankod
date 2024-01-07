@@ -43,12 +43,16 @@ export default function Home({
   const map = iconmap.block;
   return (
     <>
-    <Head >
-      <title>
-Foundations Of Esoterisms By Prabin Diogenes
-      </title>
-      <link rel="icon" href="https://fav.farm/👓" />
-    </Head>
+      <Head >
+        <title>
+          Foundations Of Esoterisms By Prabin Diogenes
+        </title>
+        <link rel="icon" href="https://fav.farm/👓" />
+        <meta name="twitter:card" content="summary" />
+        <meta property="twitter:title" content="Foundations Of Esoterisms By Prabin Diogenes" />
+        <meta name="twitter:image" content="https://fav.farm/%F0%9F%97%BF" />
+        <meta property="twitter:description" content="Indie Developer"></meta>
+      </Head>
       <header className="header p-[8px]">
         <div className="header__title">
           <h2>
