@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 import "prismjs/themes/prism-tomorrow.css"; // only needed for code highlighting
 import { NotionRenderer } from "react-notion";
 import { NotionRenderer as Xrend } from "react-notion-x";
+import Head from "next/head";
 
 const notion = new NotionAPI();
 
@@ -42,6 +43,12 @@ export default function Home({
   const map = iconmap.block;
   return (
     <>
+    <Head >
+      <title>
+Foundations Of Esoterisms By Prabin Diogenes
+      </title>
+      <link rel="icon" href="https://fav.farm/👓" />
+    </Head>
       <header className="header p-[8px]">
         <div className="header__title">
           <h2>
