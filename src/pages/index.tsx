@@ -48,6 +48,13 @@ export default function Home({
           Foundations Of Esoterisms By Prabin Diogenes
         </title>
         <link rel="icon" href="https://fav.farm/👓" />
+
+
+        <meta property="og:title" content="Foundations Of Esoterisms By Prabin Diogenes" />
+        <meta property="og:url" content="https://prabins.co" />
+        <meta property="og:image" content="https://fav.farm/%F0%9F%97%BF" />
+        <meta property="og:description" content="Indie Developer" />
+        <meta property="og:type" content="website"></meta>
         <meta name="twitter:card" content="summary" />
         <meta property="twitter:title" content="Foundations Of Esoterisms By Prabin Diogenes" />
         <meta name="twitter:image" content="https://fav.farm/%F0%9F%97%BF" />
